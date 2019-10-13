@@ -15,6 +15,7 @@ public class LearnMultiplication {
         double num1 = 0;
         double num2 = 0;
         boolean incorrect = false;
+        int op = 0;
 
         //checks to see if the user wants to continue learning
         while (again != 'n' && again != 'N') {
@@ -81,7 +82,10 @@ public class LearnMultiplication {
                 } else if (problem == 5) {
                     double ans;
                     Random randomNum2 = new Random();
-                    int op = randomNum2.nextInt(4) + 1;
+                    //keeps the same problem type if the previous answer was wrong
+                    if(!incorrect){
+                        op = randomNum2.nextInt(4) + 1;
+                    }
                     question(op, num1, num2);
                     ans = scnr.nextDouble();
                     incorrect = check(op, num1, num2, ans);
