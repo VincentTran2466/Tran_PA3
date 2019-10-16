@@ -157,7 +157,7 @@ public class LearnMultiplication {
             System.out.println("What is " + num1 + " times " + num2 + "?");
         }
         else if (problem == 4) {
-            System.out.println("What is " + num1 + " divided by " + num2 + "?");
+            System.out.println("What is " + num1 + " divided by " + num2 + "? (Round to the nearest hundredth.");
         }
     }
 
@@ -194,7 +194,7 @@ public class LearnMultiplication {
             }
         }
         else if (problem == 4) {
-            if (ans == num1 / num2) {
+            if (ans == (double) Math.round((num1 / num2) * 100d) / 100d) {
                 System.out.println(positive());
                 incorrect = false;
             } else {
